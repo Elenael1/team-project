@@ -1,0 +1,37 @@
+.movie-img:hover{
+    display: inline-block;
+    background-color: grey;
+    cursor: pointer;
+}
+.movie_info{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.movie_title{
+    color: #DC56C5;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+     
+}
+.movie_time { 
+color: #FFF;
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.movie_place {
+    color: #FFF;
+   
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}

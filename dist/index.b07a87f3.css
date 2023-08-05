@@ -2220,4 +2220,51 @@ form {
   outline: none;
 }
 
+.footer {
+  color: #939393;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.movie-img:hover {
+  cursor: pointer;
+  background-color: gray;
+  display: inline-block;
+}
+
+.movie_info {
+  flex-direction: column;
+  display: flex;
+}
+
+.movie_title {
+  color: #dc56c5;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.movie_time {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.movie_place {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
 /*# sourceMappingURL=index.b07a87f3.css.map */
