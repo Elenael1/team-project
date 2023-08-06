@@ -1,3 +1,4 @@
+/*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 *, :before, :after {
   box-sizing: border-box;
 }
@@ -14,11 +15,12 @@ body {
 }
 
 hr {
-  height: 0;
   color: inherit;
+  height: 0;
 }
 
 abbr[title] {
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
 }
 
@@ -91,7 +93,7 @@ progress {
   vertical-align: baseline;
 }
 
-::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+:is(::-webkit-inner-spin-button, ::-webkit-outer-spin-button) {
   height: auto;
 }
 
@@ -397,7 +399,7 @@ summary {
   }
 
   to {
-    transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0);
   }
 }
 
@@ -1388,12 +1390,12 @@ summary {
 
   80% {
     animation-timing-function: ease-in;
-    transform: perspective(400px)scale3d(.95, .95, .95)translate3d(0, 0, 0)rotate3d(0, 1, 0, 0deg);
+    transform: perspective(400px)scale3d(.95, .95, .95)translate3d(0, 0, 0)rotate3d(0, 1, 0, 0);
   }
 
   to {
     animation-timing-function: ease-in;
-    transform: perspective(400px)scale3d(1, 1, 1)translate3d(0, 0, 0)rotate3d(0, 1, 0, 0deg);
+    transform: perspective(400px)scale3d(1, 1, 1)translate3d(0, 0, 0)rotate3d(0, 1, 0, 0);
   }
 }
 
@@ -2159,7 +2161,11 @@ body {
   margin: 0 auto;
 }
 
-.logo-img {
+a {
+  text-decoration: none;
+}
+
+.header .logo-img {
   z-index: 100;
   max-width: 100%;
   height: auto;
@@ -2169,7 +2175,7 @@ body {
   left: 0;
 }
 
-.header__title {
+.header .header__title {
   letter-spacing: 0;
   text-align: center;
   color: #dc56c5;
@@ -2181,25 +2187,26 @@ body {
   line-height: 61px;
 }
 
-.search {
+.header .search {
   text-align: center;
   justify-content: center;
   align-items: center;
+  margin-bottom: 133px;
   display: flex;
 }
 
-form {
+.header form {
   margin-right: 50px;
 }
 
-.search__input {
+.header .search__input {
   letter-spacing: 0;
   color: #fff;
-  width: 270px;
-  height: 40px;
   background: #4d4d4dda;
   border: none;
   border-radius: 20px;
+  width: 270px;
+  height: 40px;
   margin-right: -2rem;
   padding: .7rem 1rem;
   font-family: Montserrat;
@@ -2209,15 +2216,94 @@ form {
   transition: all .5s ease-in-out;
 }
 
-.search-button {
+.header .search-button {
   cursor: pointer;
   background: none;
   border: none;
 }
 
-.search__input:focus {
+.header .search__input:focus {
   border: none;
   outline: none;
+}
+
+.main .cards {
+  flex-wrap: wrap;
+  gap: 10%;
+  display: flex;
+}
+
+.main .card-item {
+  border-radius: 50px 0;
+  flex-direction: column;
+  width: 180px;
+  height: 300px;
+  margin-bottom: 50px;
+  display: flex;
+}
+
+.main .card-item:not(:last-child) {
+  margin-left: 56px;
+}
+
+.main .card-image {
+  border-radius: 50px 0;
+  height: 227px;
+  margin-bottom: 5px;
+}
+
+.main .card-item {
+  text-decoration: none;
+  list-style: none;
+  position: relative;
+}
+
+.main .card-item:after {
+  content: "";
+  z-index: 10;
+  box-sizing: border-box;
+  pointer-events: none;
+  border: 1px solid #dc56c54d;
+  border-radius: 50px 0;
+  width: 153px;
+  height: 143px;
+  position: absolute;
+  top: -13px;
+  right: -14px;
+}
+
+.main .information {
+  text-align: center;
+}
+
+.main .name {
+  letter-spacing: 0;
+  color: #dc56c5;
+  margin-bottom: 5px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.main .date {
+  letter-spacing: 0;
+  color: #fff;
+  margin-bottom: 5px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.main .local {
+  letter-spacing: 0;
+  color: #fff;
+  margin-right: 3px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
 }
 
 /*# sourceMappingURL=index.b07a87f3.css.map */
