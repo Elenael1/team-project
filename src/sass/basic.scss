@@ -8,6 +8,7 @@
 body {
     background-image:url(../images/bg.png) ;
     background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .container {
@@ -15,3 +16,6 @@ body {
     margin: 0 auto;
 }
 
+a{
+    text-decoration: none;
+}
