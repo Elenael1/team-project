@@ -1,38 +1,50 @@
 import { createHTML } from "./createHTML";
 
-const ul = document.querySelector('.cards')
-async function fetchEvents(page) {
-    const data = await fetch(
-        `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=PRUcOi43mY6d4bQ805bXjBE5odWt60Qq&
-        page=${page}`
-    ).then((responce)=>{
-        return responce.json();
-    });
-    const eventData = data._embedded.events;
-    createHTML(eventData)
-    
+const ul = document.querySelector('.cards');
+const buttons = document.querySelector('.pag_buttons');
+const totalPages = 29;
+
+let currentPage = 1;
+
+function fetchEvents(page) {
+    return fetch(
+        `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=PRUcOi43mY6d4bQ805bXjBE5odWt60Qq&page=${page}`
+    ).then((response) => response.json());
 }
 
+function createPaginationButtons(currentPage) {
+    const maxButtons = 5;
+    const halfMaxButtons = Math.floor(maxButtons / 2);
+    const startPage = Math.max(currentPage - halfMaxButtons, 1);
+    const endPage = Math.min(startPage + maxButtons - 1, totalPages);
 
-const buttons = document.querySelector('.pag_buttons');
+    let paginationHTML = '';
 
-buttons.addEventListener('click', pagination)
+    for (let i = startPage; i <= endPage; i++) {
+        paginationHTML += `<button class="click ${i === currentPage ? 'active' : ''}">${i}</button>`;
+    }
+
+    if (endPage < totalPages) {
+        paginationHTML += '<button class="click">...</button>';
+        paginationHTML += `<button class="click">${totalPages}</button>`;
+    }
+
+    buttons.innerHTML = paginationHTML;
+}
+
+async function updatePage(page) {
+    ul.innerHTML = ""; 
+    const data = await fetchEvents(page);
+    const eventData = data._embedded.events;
+    createHTML(eventData);
+}
 
 function pagination(e) {
-    ul.innerHTML = "";
     if (e.target.nodeName !== "BUTTON") return;
-    fetchEvents(e.target.textContent)
-   
- }
+    currentPage = parseInt(e.target.textContent);
+    updatePage(currentPage);
+    createPaginationButtons(currentPage);
+}
 
-
-
-
-  
-  
-  
-
-
-
-
+buttons.addEventListener('click', pagination);
 

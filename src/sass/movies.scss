@@ -84,6 +84,44 @@
   color: #ffffff;
   margin-right: 3px;
 }
+
+.pag_buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+.click{
+  margin-top: 20px;
+  margin-bottom: 80px;
+  border: none;
+  background: none;
+  margin-right:30px;
+  font-size: 19px;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+.click::after {
+  width: 45px;
+  height: 30px;
+  top: -4px;
+  right: -18px;
+}
+
+.click.active::after {
+  content: '';
+  position: absolute;
+  z-index: 10;
+  border: 1px solid #dc56c54d;
+  box-sizing: border-box;
+  border-radius: 50px 0;
+  pointer-events: none;
+}
+
+}
+
+
 }
 // hover
 
