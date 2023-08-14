@@ -33,17 +33,19 @@ function createPaginationButtons(currentPage) {
 }
 
 async function updatePage(page) {
-    ul.innerHTML = ""; 
+    ul.innerHTML = "";
     const data = await fetchEvents(page);
     const eventData = data._embedded.events;
     createHTML(eventData);
 }
 
 function pagination(e) {
-    if (e.target.nodeName !== "BUTTON") return;
+    if (e.target.nodeName !== "BUTTON") 
+    return;
     currentPage = parseInt(e.target.textContent);
     updatePage(currentPage);
     createPaginationButtons(currentPage);
+    console.log();
 }
 
 buttons.addEventListener('click', pagination);

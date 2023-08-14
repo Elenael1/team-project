@@ -5,20 +5,18 @@ function createHTML(eventData) {
         const markup = `
     <div class='container'>
     <div class='cards'>
-    
+    <div class="hover-cards">
     <li class="card-item">
-    
     <img class="card-image" src=${images[0].url} alt="" loading="lazy">
     <div class="information">
     <p class='name'>${name}</p>
     <p class='date'>${start.localDate}</p
     </div>
-    <button type='button' class="card-button">More info</button>
-
     </li>
-    
     </div>
-    </div>`
+    
+    </div>  
+    </div> ` 
 
         ul.insertAdjacentHTML("beforeend", markup);
     });
@@ -26,3 +24,17 @@ function createHTML(eventData) {
 
 
 export { createHTML }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
