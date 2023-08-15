@@ -2155,7 +2155,7 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background: url("bg.fd22e69c.png") center / cover no-repeat;
+  background: url("bg.fd22e69c.png") 0 0 / cover no-repeat;
 }
 
 .container {
