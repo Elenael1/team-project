@@ -2152,9 +2152,10 @@ summary {
 }
 
 body {
-  background-image: url("bg.fd22e69c.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background: url("bg.fd22e69c.png") center / cover no-repeat;
 }
 
 .container {

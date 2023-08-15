@@ -6,9 +6,11 @@
 }
 
 body {
-    background-image:url(../images/bg.png) ;
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background: url(../images/bg.png) no-repeat center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
 }
 
 .container {
