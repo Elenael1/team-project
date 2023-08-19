@@ -2282,7 +2282,7 @@ a {
   transform: scale(1);
 }
 
-.main .name {
+.main .information .name {
   letter-spacing: 0;
   color: #dc56c5;
   margin-bottom: 5px;
@@ -2292,7 +2292,7 @@ a {
   line-height: 20px;
 }
 
-.main .date {
+.main .information .date {
   letter-spacing: 0;
   color: #fff;
   margin-bottom: 5px;
@@ -2345,6 +2345,14 @@ a {
   border: 1px solid #dc56c54d;
   border-radius: 50px 0;
   position: absolute;
+}
+
+.main .click-points {
+  pointer-events: none;
+}
+
+.main .card-location {
+  background-color: #ff0101;
 }
 
 .hover-cards {

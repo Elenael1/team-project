@@ -13,7 +13,6 @@
     flex-direction: column;
     margin-bottom: 50px;
     position: relative;
- 
   }
   .card-item:not(:last-child) {
     margin-left: 56px;
@@ -29,7 +28,6 @@
     list-style: none;
     text-decoration: none;
     transition: 0.3s linear;
-
   }
 
   .card-item::after {
@@ -53,28 +51,28 @@
   .information {
     text-align: center;
     transform: scale(1);
-  }
 
-  .name {
-    font-family: Montserrat;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 20px;
-    letter-spacing: 0em;
-    color: #dc56c5;
-    margin-bottom: 5px;
+    .name {
+      font-family: Montserrat;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 20px;
+      letter-spacing: 0em;
+      color: #dc56c5;
+      margin-bottom: 5px;
+    }
 
-  }
+    .date {
+      font-family: Montserrat;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0em;
+      color: #ffffff;
+      margin-bottom: 5px;
+    }
 
-  .date {
-    font-family: Montserrat;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0em;
-    color: #ffffff;
-    margin-bottom: 5px;
-
+  
   }
 
   .local {
@@ -86,7 +84,6 @@
     color: #ffffff;
     margin-right: 3px;
   }
-
   .pag_buttons {
     display: flex;
     justify-content: center;
@@ -120,29 +117,35 @@
       pointer-events: none;
     }
   }
+
+  .click-points {
+    pointer-events: none;
+  }
+
+  .card-location {
+    background-color: #ff0101;
+  }
 }
 // hover
 
-.hover-cards{
+.hover-cards {
   transition: 0.3s linear;
-
 }
 
 .hover-cards:hover {
   transform: scale(1.05);
   filter: brightness(1.4);
-border: none;
- 
-  .card-image{
+  border: none;
+
+  .card-image {
     box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff5ce9,
-    0 0 15px #ff5ce9, 0 0 30px #ff5ce9, 0 0 20px#ff5ce9, 0 0 5px #ff5ce9;
+      0 0 15px #ff5ce9, 0 0 30px #ff5ce9, 0 0 20px#ff5ce9, 0 0 5px #ff5ce9;
   }
-  .name{
-    color:#000;
+  .name {
+    color: #000;
     text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #ff5ce9,
-    0 0 10px #ff5ce9, 0 0 10px #ff5ce9, 0 0 10px #ff5ce9, 0 0 10px #ff5ce9;
+      0 0 10px #ff5ce9, 0 0 10px #ff5ce9, 0 0 10px #ff5ce9, 0 0 10px #ff5ce9;
   }
-  
 }
 
 .card-item:hover::after {
