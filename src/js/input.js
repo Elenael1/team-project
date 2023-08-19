@@ -1,52 +1,36 @@
 import { debounce } from 'debounce';
 import Notiflix from "notiflix";
-
-const API_KEY = "PRUcOi43mY6d4bQ805bXjBE5odWt60Qq";
-const API_URL = "https://app.ticketmaster.com/discovery/v2/events.json";
+// import fetchEvents from './request';
+import onLoad from "./request";
 
 const refs = {
-    input: document.querySelector('.search__input'),
+    country: document.querySelector('.location_input'),
+    name: document.querySelector('.name_input'),
+    search: document.querySelector('.search'),
     button: document.querySelector('.search-button'),
+    cards: document.querySelector(".cards")
 }
 
-refs.input.addEventListener('input', debounce(onInput, 300))
+refs.search.addEventListener('input', debounce(inputContent, 300))
+
+function inputContent(e) {
+    if (e.target.nodeName!=="INPUT") return;
+    const country = refs.country.value.trim();
+    const name = refs.name.value.trim();
+    refs.cards.innerHTML=" ";
+    onLoad(name,country);
+    const value = e.target.value.trim();
+    // console.log('value :>> ', value);
+    // console.log(refs.country.value);
+}
+
+refs.search.addEventListener('input', debounce(onInput, 300))
 
 function onInput(e) {
     const value = e.target.value.trim();
+    console.log(value);
     if (value === '') {
         Notiflix.Notify.info('Enter something');
         return;
     }
 }
-
-let page = 1;
-let name = '';
-
-async function fetch(name, page) {
-    try {
-      const fetch = await axios.get(
-        `${API_URL}?key=${API_KEY}&page=${page}`
-      );
-      const response = fetch.data;
-      return response;
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
-
-// refs.input.addEventListener('input', debounce(onInput, 300));
-// refs.button.addEventListener('click', onClick);
-  
-
-
-// async function onClick(e) {
-//     const value = refs.input.value.trim();
-//     page += 1;
-  
-//     const data = await fetch(value, page);
-  
-//     const images = data.total - page * 5;
-//   }
-
-
-//   createHTML()

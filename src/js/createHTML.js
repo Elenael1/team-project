@@ -2,11 +2,9 @@ const ul = document.querySelector('.cards');
 
 function createHTML(eventData) {
     eventData.map(({ name, dates: { start }, images }) => {
-
-        console.log(eventData[0]._embedded.venues[0].name);
-        const place = eventData[0]._embedded.venues[0].name;
-
-        const markup = `
+    console.log(eventData[0]._embedded.venues[0].name);
+    const place = eventData[0]._embedded.venues[0].name;
+    const markup = `
     <div class='container'>
     <div class='cards'>
     <div class="hover-cards">
@@ -23,7 +21,7 @@ function createHTML(eventData) {
     </div>  
     </div> ` 
 
-        ul.insertAdjacentHTML("beforeend", markup);
+ul.insertAdjacentHTML("beforeend", markup);
     });
 };
 
