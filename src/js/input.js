@@ -20,8 +20,7 @@ function inputContent(e) {
     refs.cards.innerHTML=" ";
     onLoad(name,country);
     const value = e.target.value.trim();
-    // console.log('value :>> ', value);
-    // console.log(refs.country.value);
+
 }
 
 refs.search.addEventListener('input', debounce(onInput, 300))
