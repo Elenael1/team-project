@@ -18,18 +18,22 @@ function inputContent(e) {
     const country = refs.country.value.trim();
     const name = refs.name.value.trim();
     refs.cards.innerHTML= " ";
-    fetchEvents(name,country);
+    fetchEvents(country, name);
     const value = e.target.value.trim();
-}
-
-refs.search.addEventListener('input', debounce(onInput, 300))
-
-function onInput(e) {
-    e.preventDefault();
-    const value = e.target.value.trim();
-    console.log(value);
-    if (value === '') {
+    if (!country && !name ) {
         Notiflix.Notify.info('Enter something');
         return;
     }
 }
+
+// refs.search.addEventListener('input', debounce(onInput, 300))
+
+// function onInput(e) {
+//     e.preventDefault();
+//     const value = e.target.value.trim();
+//     console.log(value);
+//     if (value === '') {
+//         Notiflix.Notify.info('Enter something');
+//         return;
+//     }
+// }
