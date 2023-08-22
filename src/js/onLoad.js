@@ -6,4 +6,3 @@ async function onLoad(e) {
     fetchEvents("US")
 };
 
-export {onLoad} ;

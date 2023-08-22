@@ -1,7 +1,7 @@
 import { debounce } from 'debounce';
 import Notiflix from "notiflix";
-// import fetchEvents from './request';
-import onLoad from "./request";
+import fetchEvents, { onLoad } from "./request";
+
 
 const refs = {
     country: document.querySelector('.location_input'),
@@ -17,15 +17,15 @@ function inputContent(e) {
     if (e.target.nodeName!=="INPUT") return;
     const country = refs.country.value.trim();
     const name = refs.name.value.trim();
-    refs.cards.innerHTML=" ";
-    onLoad(name,country);
+    refs.cards.innerHTML= " ";
+    fetchEvents(name,country);
     const value = e.target.value.trim();
-
 }
 
 refs.search.addEventListener('input', debounce(onInput, 300))
 
 function onInput(e) {
+    e.preventDefault();
     const value = e.target.value.trim();
     console.log(value);
     if (value === '') {
