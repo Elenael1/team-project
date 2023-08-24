@@ -2167,14 +2167,25 @@ a {
   text-decoration: none;
 }
 
-.header .logo-img {
-  z-index: 100;
-  max-width: 100%;
-  height: auto;
+.header .logo {
+  z-index: 1;
+  position: absolute;
+  left: 40px;
+}
+
+.header .logo:before {
+  z-index: -1;
+  content: "";
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  background: linear-gradient(136deg, #c4c4c408 0%, #c4c4c400 100%);
+  border-radius: 477px;
+  width: 450px;
+  height: 450px;
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -265px;
+  left: -245px;
 }
 
 .header .header__title {
@@ -2229,6 +2240,23 @@ a {
   outline: none;
 }
 
+.header .location_input {
+  letter-spacing: 0;
+  color: #fff;
+  background: #4d4d4dda;
+  border: none;
+  border-radius: 20px;
+  width: 270px;
+  height: 40px;
+  margin-right: -2rem;
+  padding: .7rem 1rem;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  transition: all .5s ease-in-out;
+}
+
 .main .cards {
   flex-wrap: wrap;
   gap: 10%;
@@ -2239,19 +2267,20 @@ a {
 .main .card-item {
   border-radius: 50px 0;
   flex-direction: column;
-  width: 180px;
-  height: 300px;
+  width: 194px;
+  height: 312px;
   margin-bottom: 50px;
   display: flex;
   position: relative;
 }
 
 .main .card-item:not(:last-child) {
-  margin-left: 56px;
+  margin-left: 26px;
 }
 
 .main .card-image {
   border-radius: 50px 0;
+  width: 180px;
   height: 227px;
   margin-bottom: 5px;
 }
