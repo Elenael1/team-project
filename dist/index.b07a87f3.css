@@ -2167,14 +2167,25 @@ a {
   text-decoration: none;
 }
 
-.header .logo-img {
-  z-index: 100;
-  max-width: 100%;
-  height: auto;
+.header .logo {
+  z-index: 1;
+  position: absolute;
+  left: 40px;
+}
+
+.header .logo:before {
+  z-index: -1;
+  content: "";
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  background: linear-gradient(136deg, #c4c4c408 0%, #c4c4c400 100%);
+  border-radius: 477px;
+  width: 450px;
+  height: 450px;
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -265px;
+  left: -245px;
 }
 
 .header .header__title {

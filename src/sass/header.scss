@@ -1,16 +1,24 @@
 .header{
-
-
-  .logo-img {
+  .logo {
     position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 100;
-  
+    left: 40px;
+    z-index: 1;
+}
+.logo::before {
+    z-index: -1;
+    position: absolute;
     display: block;
-    max-width: 100%;
-    height: auto;
-  }
+    content: "";
+    width: 450px;
+    height: 450px;
+    left: -245px;
+    top: -265px;
+    border-radius: 477px;
+    background: linear-gradient(136deg, rgba(196, 196, 196, 0.03) 0%, rgba(196, 196, 196, 0.00) 100%);
+    backdrop-filter: blur(15px);
+}
+      
+      
   .header__title {
     font-family: Montserrat;
     font-size: 50px;
