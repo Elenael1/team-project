@@ -2201,7 +2201,7 @@ a {
   margin-right: 50px;
 }
 
-.header .search__input {
+.header .name_input {
   letter-spacing: 0;
   color: #fff;
   background: #4d4d4dda;
@@ -2229,6 +2229,23 @@ a {
   outline: none;
 }
 
+.header .location_input {
+  letter-spacing: 0;
+  color: #fff;
+  background: #4d4d4dda;
+  border: none;
+  border-radius: 20px;
+  width: 270px;
+  height: 40px;
+  margin-right: -2rem;
+  padding: .7rem 1rem;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  transition: all .5s ease-in-out;
+}
+
 .main .cards {
   flex-wrap: wrap;
   gap: 10%;
@@ -2238,19 +2255,20 @@ a {
 .main .card-item {
   border-radius: 50px 0;
   flex-direction: column;
-  width: 180px;
-  height: 300px;
+  width: 194px;
+  height: 312px;
   margin-bottom: 50px;
   display: flex;
   position: relative;
 }
 
 .main .card-item:not(:last-child) {
-  margin-left: 56px;
+  margin-left: 26px;
 }
 
 .main .card-image {
   border-radius: 50px 0;
+  width: 180px;
   height: 227px;
   margin-bottom: 5px;
 }
