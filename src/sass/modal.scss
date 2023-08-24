@@ -16,6 +16,11 @@ body{
         border-radius: 300px 0px;
         z-index: 11;
 
+        .close{
+            position: absolute;
+            right: 30px;
+            top: 30px;
+        }
         .pic-circle{
             position: relative;
             left: 50%;

@@ -2260,7 +2260,6 @@ a {
 .main .cards {
   flex-wrap: wrap;
   gap: 10%;
-  width: 1000px;
   display: flex;
 }
 
@@ -2444,6 +2443,12 @@ body .modal {
   position: absolute;
   top: 200px;
   left: 150%;
+}
+
+body .modal .close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
 }
 
 body .modal .pic-circle {
