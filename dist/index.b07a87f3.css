@@ -2167,14 +2167,25 @@ a {
   text-decoration: none;
 }
 
-.header .logo-img {
-  z-index: 100;
-  max-width: 100%;
-  height: auto;
+.header .logo {
+  z-index: 1;
+  position: absolute;
+  left: 40px;
+}
+
+.header .logo:before {
+  z-index: -1;
+  content: "";
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  background: linear-gradient(136deg, #c4c4c408 0%, #c4c4c400 100%);
+  border-radius: 477px;
+  width: 450px;
+  height: 450px;
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -265px;
+  left: -245px;
 }
 
 .header .header__title {
@@ -2201,7 +2212,7 @@ a {
   margin-right: 50px;
 }
 
-.header .search__input {
+.header .name_input {
   letter-spacing: 0;
   color: #fff;
   background: #4d4d4dda;
@@ -2229,6 +2240,23 @@ a {
   outline: none;
 }
 
+.header .location_input {
+  letter-spacing: 0;
+  color: #fff;
+  background: #4d4d4dda;
+  border: none;
+  border-radius: 20px;
+  width: 270px;
+  height: 40px;
+  margin-right: -2rem;
+  padding: .7rem 1rem;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  transition: all .5s ease-in-out;
+}
+
 .main .cards {
   flex-wrap: wrap;
   gap: 10%;
@@ -2238,19 +2266,20 @@ a {
 .main .card-item {
   border-radius: 50px 0;
   flex-direction: column;
-  width: 180px;
-  height: 300px;
+  width: 194px;
+  height: 312px;
   margin-bottom: 50px;
   display: flex;
   position: relative;
 }
 
 .main .card-item:not(:last-child) {
-  margin-left: 56px;
+  margin-left: 26px;
 }
 
 .main .card-image {
   border-radius: 50px 0;
+  width: 180px;
   height: 227px;
   margin-bottom: 5px;
 }
@@ -2393,6 +2422,126 @@ a {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body blur {
+  z-index: 12;
+  position: fixed;
+  top: 0;
+}
+
+body .modal {
+  z-index: 11;
+  background-color: #fff;
+  border-radius: 300px 0;
+  width: 942px;
+  height: 1023px;
+  position: absolute;
+  top: 200px;
+  left: 150%;
+}
+
+body .modal .close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+body .modal .pic-circle {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 20%);
+}
+
+body .modal .modal-block {
+  align-items: center;
+  margin: 40px 30px 45px;
+  display: flex;
+}
+
+body .modal .modal-block .pic-poster {
+  width: 360px;
+  height: 641px;
+}
+
+body .modal .modal-block .modal-texts {
+  flex-direction: column;
+  height: 641px;
+  margin-left: 60px;
+  display: flex;
+}
+
+body .modal .modal-block .modal-texts .about {
+  width: 450px;
+  margin-bottom: 20px;
+}
+
+body .modal .modal-block .modal-texts .about p {
+  margin: 0;
+}
+
+body .modal .modal-block .modal-texts .about .title {
+  color: #dc56c5;
+  margin-bottom: 7px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+body .modal .modal-block .modal-texts .about .text {
+  color: #0e0e0e;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+body .modal .modal-block .modal-texts .about .buy-tick-but {
+  color: #fff;
+  background: #4c00fe;
+  border: none;
+  border-radius: 5px;
+  width: 145px;
+  height: 40px;
+  margin: 20px 0 31px;
+}
+
+body .modal .modal-block .modal-texts .about .buy-tick-but:hover {
+  color: #4c00fe;
+  background: #fff;
+  transition: all .5s;
+}
+
+body .modal .modal-block .modal-texts .about .buy-tick-line {
+  display: flex;
+}
+
+body .modal .modal-block .modal-texts .about .buy-tick-line .ticket {
+  margin-right: 13px;
+}
+
+body .modal .more-but {
+  color: #4c00fe;
+  border: 1px solid #4c00fe;
+  border-radius: 5px;
+  width: 245px;
+  height: 40px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 20%);
+}
+
+body .modal .more-but:hover {
+  color: #fff;
+  background: #4c00fe;
+  transition: all .5s;
 }
 
 /*# sourceMappingURL=index.b07a87f3.css.map */
