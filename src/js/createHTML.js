@@ -1,15 +1,18 @@
 const ul = document.querySelector('.cards');
+const pag = document.querySelector('.pag_buttons');
 
 function createHTML(eventData) {
-    eventData.map(({ name, dates: { start }, images }) => {
-    console.log(eventData[0]._embedded.venues[0].name);
-    const place = eventData[0]._embedded.venues[0].name;
+  eventData.map(({ name, dates: { start }, images }) => {
+    const place = eventData[0]?._embedded?.venues[0]?.name
+      ? eventData[0]?._embedded?.venues[0]?.name
+      : 'no info';
     const markup = `
     <div class='container'>
     <div class='cards'>
     <div class="hover-cards">
     <li class="card-item">
-    <img class="card-image" src=${images[0].url} alt="" loading="lazy">
+    <pictu>
+    <img class="card-image" src=${images[3].url} alt="" loading="lazy">
     <div class="information">
     <p class='name'>${name}</p>
     <p class='date'>${start.localDate}</p>
@@ -17,13 +20,19 @@ function createHTML(eventData) {
     </div>
     </li>
     </div>
-    
-    </div>  
-    </div> ` 
 
-ul.insertAdjacentHTML("beforeend", markup);
-    });
-};
+    </div>
+    </div> `;
 
+    ul.insertAdjacentHTML('beforeend', markup);
+  });
+}
 
-export { createHTML }
+function notFound() {
+  const p = `<p class="no-info">за вашим запитом нічого не знайдено </p>`;
+  ul.innerHTML = '';
+  // pag.innerHTML = '';
+
+  ul.insertAdjacentHTML('beforeend', p);
+}
+export { createHTML, notFound };
