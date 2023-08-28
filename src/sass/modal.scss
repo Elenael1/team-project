@@ -1,21 +1,29 @@
 body{
     overflow-x: hidden;
      
-    blur{
-        position: fixed;
-        top: 0;
-        z-index: 12;
-    }
+    // .blur{
+    //     position: fixed;
+    //     top: 0px;
+    //     background: rgba(32, 13, 29, 0.60);
+    //     backdrop-filter: blur(1.5px);
+    //     width: 2000px;
+    //     height: 100%;
+    //     z-index: -100;
+    // }
     .modal{
         position: absolute;
         width: 942px;
         height: 1023px;
         background-color: white;
         top: 200px;
-        left: 150%;
+        left: 200%;
         border-radius: 300px 0px;
-        z-index: 11;
+        z-index: 12;
 
+        // .modal::after{
+        //     content: '';
+        // }
+        
         .close{
             position: absolute;
             right: 30px;
