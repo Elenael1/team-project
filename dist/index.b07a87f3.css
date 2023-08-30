@@ -2424,25 +2424,32 @@ a {
   line-height: 20px;
 }
 
+.modal-overlay {
+  -webkit-backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(1.5px);
+  z-index: 10;
+  background-color: #200d1d99;
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 body {
   overflow-x: hidden;
 }
 
-body blur {
-  z-index: 12;
-  position: fixed;
-  top: 0;
-}
-
 body .modal {
-  z-index: 11;
+  z-index: 12;
   background-color: #fff;
   border-radius: 300px 0;
   width: 942px;
   height: 1023px;
   position: absolute;
   top: 200px;
-  left: 150%;
+  left: 200%;
 }
 
 body .modal .close {

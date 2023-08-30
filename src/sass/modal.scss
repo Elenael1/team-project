@@ -1,21 +1,27 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(32, 13, 29, 0.60); 
+    backdrop-filter: blur(1.5px);
+    z-index: 10; 
+    display: none; 
+}
 body{
     overflow-x: hidden;
      
-    blur{
-        position: fixed;
-        top: 0;
-        z-index: 12;
-    }
     .modal{
         position: absolute;
         width: 942px;
         height: 1023px;
         background-color: white;
         top: 200px;
-        left: 150%;
+        left: 200%;
         border-radius: 300px 0px;
-        z-index: 11;
-
+        z-index: 12;
+        
         .close{
             position: absolute;
             right: 30px;
