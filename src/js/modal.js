@@ -1,27 +1,38 @@
 const cards = document.querySelector('.cards');
 const modal = document.querySelector('.modal');
 const close = document.querySelector('.close');
+const overlay = document.querySelector('.modal-overlay');
 
 cards.addEventListener('click', openModal);
 close.addEventListener('click', closeModalBtn)
 addEventListener("keydown", closeModalOnKey);
+overlay.addEventListener('click', closeModalOnOverlay)
 
 function openModal (e){
     modal.style.left = '50%';
     modal.style.transform = 'translate(-50%, 20%)';
-    modal.style.transition = '0.5s';
+    modal.style.transition = '0.3s';
+    overlay.style.display = 'block';
 }
 function closeModalBtn (e){
-    modal.style.left = '150%';
+    modal.style.left = '200%';
     modal.style.transform = 'translate(-50%, 20%)';
-    modal.style.transition = '0.5s';
+    modal.style.transition = '0.3s';
+    overlay.style.display = 'none';
 }
 function closeModalOnKey({key, code}){
     if(code === "Escape"){
-        modal.style.left = '150%';
+        modal.style.left = '200%';
         modal.style.transform = 'translate(-50%, 20%)';
-        modal.style.transition = '0.5s';
+        modal.style.transition = '0.3s';
+        overlay.style.display = 'none';
     }
+}
+function closeModalOnOverlay(e){
+    modal.style.left = '200%';
+    modal.style.transform = 'translate(-50%, 20%)';
+    modal.style.transition = '0.3s';
+    overlay.style.display = 'none';
 }
 
 async function fetchModalEvents(id) {
@@ -68,11 +79,8 @@ function createModal({
   }
 
  const markup = `
-<img src="/src/images/pic circle.png" alt="pic circle" class="pic-circle">
-<img src="/src/images/close.png" alt="close button" class="close">
- <img src="${images[0].url}" alt="pic circle" class="pic-circle" />
 <div class="modal-block">
-    <img src="${images[0].url}" alt="pic poster" class="pic-poster" />
+    <img src="/src/images/pic-poster.png" alt="pic poster" class="pic-poster" />
     <div class="modal-texts">
       <div class="about">
         <p class="title">INFO</p>
