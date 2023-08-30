@@ -2,7 +2,7 @@ const ul = document.querySelector('.cards');
 const pag = document.querySelector('.pag_buttons');
 
 function createHTML(eventData) {
-  eventData.map(({ name, dates: { start }, images }) => {
+  eventData.map(({ name, dates: { start }, images, id }) => {
     const place = eventData[0]?._embedded?.venues[0]?.name
       ? eventData[0]?._embedded?.venues[0]?.name
       : 'no info';
@@ -10,11 +10,11 @@ function createHTML(eventData) {
     <div class='container'>
     <div class='cards'>
     <div class="hover-cards">
-    <li class="card-item">
+    <li class="card-item" data-id=${id}>
     <pictu>
-    <img class="card-image" src=${images[3].url} alt="" loading="lazy">
+    <img class="card-image" src=${images[3].url} alt="" data-id=${id} loading="lazy">
     <div class="information">
-    <p class='name'>${name}</p>
+    <p class='name'>${name} data-id=${id}</p>
     <p class='date'>${start.localDate}</p>
     <p class='local'><img src='../images/location.png' alt=''>${place}</p>
     </div>
