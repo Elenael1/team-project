@@ -68,8 +68,8 @@ function createModal({
   }
 
  const markup = `
- <img src="/src/images/pic circle.png" alt="pic circle" class="pic-circle">
-    <img src="/src/images/close.png" alt="close button" class="close">
+<img src="/src/images/pic circle.png" alt="pic circle" class="pic-circle">
+<img src="/src/images/close.png" alt="close button" class="close">
  <img src="${images[0].url}" alt="pic circle" class="pic-circle" />
 <div class="modal-block">
     <img src="${images[0].url}" alt="pic poster" class="pic-poster" />
