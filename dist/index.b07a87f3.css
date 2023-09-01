@@ -2262,6 +2262,7 @@ a {
 
 .main .cards {
   flex-wrap: wrap;
+  margin-bottom: 30px;
   display: flex;
 }
 
