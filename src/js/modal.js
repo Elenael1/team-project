@@ -78,9 +78,12 @@ function createModal({
     currencyP = '-';
   }
 
- const markup = `
+const markup = `
+<img src="/src/images/pic circle.png" alt="pic circle" class="pic-circle">
+<img src="/src/images/close.png" alt="close button" class="close">
+ <img src="${images[0].url}" alt="pic circle" class="pic-circle" />
 <div class="modal-block">
-    <img src="/src/images/pic-poster.png" alt="pic poster" class="pic-poster" />
+    <img src="${images[0].url}" alt="pic poster" class="pic-poster" />
     <div class="modal-texts">
       <div class="about">
         <p class="title">INFO</p>
