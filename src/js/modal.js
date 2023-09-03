@@ -1,38 +1,27 @@
 const cards = document.querySelector('.cards');
 const modal = document.querySelector('.modal');
 const close = document.querySelector('.close');
-const overlay = document.querySelector('.modal-overlay');
 
 cards.addEventListener('click', openModal);
 close.addEventListener('click', closeModalBtn)
 addEventListener("keydown", closeModalOnKey);
-overlay.addEventListener('click', closeModalOnOverlay)
 
 function openModal (e){
     modal.style.left = '50%';
     modal.style.transform = 'translate(-50%, 20%)';
-    modal.style.transition = '0.3s';
-    overlay.style.display = 'block';
+    modal.style.transition = '0.5s';
 }
 function closeModalBtn (e){
-    modal.style.left = '200%';
+    modal.style.left = '150%';
     modal.style.transform = 'translate(-50%, 20%)';
-    modal.style.transition = '0.3s';
-    overlay.style.display = 'none';
+    modal.style.transition = '0.5s';
 }
 function closeModalOnKey({key, code}){
     if(code === "Escape"){
-        modal.style.left = '200%';
+        modal.style.left = '150%';
         modal.style.transform = 'translate(-50%, 20%)';
-        modal.style.transition = '0.3s';
-        overlay.style.display = 'none';
+        modal.style.transition = '0.5s';
     }
-}
-function closeModalOnOverlay(e){
-    modal.style.left = '200%';
-    modal.style.transform = 'translate(-50%, 20%)';
-    modal.style.transition = '0.3s';
-    overlay.style.display = 'none';
 }
 
 async function fetchModalEvents(id) {
@@ -42,6 +31,10 @@ async function fetchModalEvents(id) {
     return response.json();
   });
   createModal(data);
+  // console.log(data.seatmap.staticUrl);
+  console.log(`https://app.ticketmaster.com${data._links.self.href}&apikey=${API_KEY}`);
+  console.log(data._embedded.attractions[0].url);
+  console.log(data);
 }
 
 function createModal({
@@ -51,6 +44,7 @@ function createModal({
   info,
   priceRanges,
   _embedded,
+  url,
 }) {
   const place = _embedded?.venues[0]?.name
     ? _embedded?.venues[0]?.name
@@ -77,10 +71,16 @@ function createModal({
   if (currencyP === undefined) {
     currencyP = '-';
   }
+  // if (data.url === undefined) {
+    
+  // }
 
  const markup = `
+ <img src="/src/images/pic circle.png" alt="pic circle" class="pic-circle">
+    <img src="/src/images/close.png" alt="close button" class="close">
+ <img src="${images[0].url}" alt="pic circle" class="pic-circle" />
 <div class="modal-block">
-    <img src="/src/images/pic-poster.png" alt="pic poster" class="pic-poster" />
+    <img src="${images[0].url}" alt="pic poster" class="pic-poster" />
     <div class="modal-texts">
       <div class="about">
         <p class="title">INFO</p>
@@ -109,19 +109,19 @@ function createModal({
             <img src="/src/images/ticket.png" alt="ticket" class="ticket" />
             <p class="text">Standart ${minPrice} ${currencyP}/p>
           </div>
-          <button class="buy-tick-but">BUY TICKET</button>
+          <a class="buy-tick-but" href="${_embedded.venues[0].url}">BUY TICKET</a>
         </div>
         <div class="buy-tick">
           <div class="buy-tick-line">
             <img src="/src/images/ticket.png" alt="ticket" class="ticket" />
             <p class="text">VIP ${maxPrice} ${currencyP}</p>
           </div>
-          <button class="buy-tick-but">BUY TICKET</button>
+          <a class="buy-tick-but" href="${url}"> BUY TICKET</a>
         </div>
       </div>
     </div>
   </div>
-  <button class="more-but">MORE FROM THIS AUTHOR</button>
+  <a class="more-but" href="${_embedded.attractions[0].url}">MORE FROM THIS AUTHOR</a>
     `;
   modal.innerHTML = markup;
 }

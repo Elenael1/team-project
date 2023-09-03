@@ -4,7 +4,9 @@
     box-sizing: border-box;
 
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body {
     background: url(../images/bg.png) no-repeat;
         -webkit-background-size: cover;
