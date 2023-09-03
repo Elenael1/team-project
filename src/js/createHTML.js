@@ -11,10 +11,11 @@ function createHTML(eventData) {
     <div class='cards'>
     <div class="hover-cards">
     <li class="card-item" data-id=${id}>
-    <pictu>
+    <picture>
     <img class="card-image" src=${images[3].url} alt="" data-id=${id} loading="lazy">
+    </picture>
     <div class="information">
-    <p class='name'>${name} data-id=${id}</p>
+    <p class='name' data-id=${id}>${name} </p>
     <p class='date'>${start.localDate}</p>
     <p class='local'><img src='../images/location.png' alt=''>${place}</p>
     </div>

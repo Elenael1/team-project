@@ -13,13 +13,18 @@ body {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+        overflow-x: hidden;
 }
 
 .container {
     max-width: 1280px;
-    margin: 0 auto;
+   margin: 0 auto;
+  
+   padding-left: 30px;
+   padding-right: 30px;
 }
 
 a{
     text-decoration: none;
 }
+

@@ -2156,11 +2156,14 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background: url("bg.fd22e69c.png") 0 0 / cover no-repeat;
+  overflow-x: hidden;
 }
 
 .container {
   max-width: 1280px;
   margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 a {
@@ -2259,7 +2262,7 @@ a {
 
 .main .cards {
   flex-wrap: wrap;
-  gap: 10%;
+  margin-bottom: 30px;
   display: flex;
 }
 
@@ -2271,10 +2274,6 @@ a {
   margin-bottom: 50px;
   display: flex;
   position: relative;
-}
-
-.main .card-item:not(:last-child) {
-  margin-left: 26px;
 }
 
 .main .card-image {
@@ -2473,6 +2472,7 @@ body .modal .modal-block {
 body .modal .modal-block .pic-poster {
   width: 360px;
   height: 641px;
+  bottom: 147px;
 }
 
 body .modal .modal-block .modal-texts {
@@ -2549,6 +2549,36 @@ body .modal .more-but:hover {
   color: #fff;
   background: #4c00fe;
   transition: all .5s;
+}
+
+.scroll-arrow {
+  cursor: pointer;
+  opacity: 0;
+  background-color: #0000;
+  border: 2px solid #ff5ce9;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: opacity .3s ease-in-out;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transform: rotate(225deg);
+}
+
+.scroll-arrow.active {
+  opacity: 1;
+}
+
+.arrow {
+  border: 3px solid #ff5ce9;
+  border-width: 0 3px 3px 0;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-60%, -60%);
 }
 
 /*# sourceMappingURL=index.b07a87f3.css.map */
