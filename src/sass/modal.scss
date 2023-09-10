@@ -1,115 +1,187 @@
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(32, 13, 29, 0.6);
+  backdrop-filter: blur(1.5px);
+  z-index: 10;
+  display: none;
+}
+body {
+  overflow-x: hidden;
+}
+.modal {
+  position: absolute;
+  width: 1000px;
+  height: auto;
+  background-color: white;
+  top: 200px;
+  left: 200%;
+  z-index: 12;
+  border-radius: 300px 0;
+
+  .modal__container {
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+
+  .modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 41px;
+  }
+
+  .close {
+    order: 1; /* Помещаем .close вправо */
+  }
+
+  img.pic-circle {
+    margin: 0 auto; /* Центрируем изображение */
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+  }
+
+  .closeBtn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    height: 8em;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: none;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+  .closeBtn > svg {
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 20px;
+    transition: all 0.4s ease-in;
+  }
+
+  .modal__back{
+    font-size: 17px;
+
+  }
+  .closeBtn:hover > svg {
+    font-size: 1.2em;
+    transform: translateX(-5px);
+  }
+
+  .closeBtn:hover {
+    transform: translateY(-2px);
+  }
+
+  .modal__content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    max-height: 641px;
+  }
+
+  .modal-image {
+    flex: 1;
+  }
+
+  .modal-texts {
+    flex: 1;
+  }
+
+  .pic-poster {
     width: 100%;
     height: 100%;
-    background-color: rgba(32, 13, 29, 0.60); 
-    backdrop-filter: blur(1.5px);
-    z-index: 10; 
-    display: none; 
+    padding-right: 60px;
+  }
+
+  .about {
+    padding-bottom: 20px;
+  }
+
+  .title__modal {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #dc56c5;
+
+    padding-bottom: 7px;
+  }
+
+  .text__modal {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0e0e0e;
+  }
+
+  .buy-tick-but {
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    padding: 9px 19px;
+    background-color: #4C00FE; 
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #ffffff;
+    border-radius: 5px;
+  }
+  .buy-tick-but:hover {
+    border: 1px solid #000;
+    background-color:#fff; // Изменяем фон при наведении
+    color: #0e0e0e; // Изменяем цвет текста при наведении
 }
-body{
-    overflow-x: hidden;
-     
-    .modal{
-        position: absolute;
-        width: 942px;
-        height: 1023px;
-        background-color: white;
-        top: 200px;
-        left: 200%;
-        border-radius: 300px 0px;
-        z-index: 12;
-        
-        .close{
-            position: absolute;
-            right: 30px;
-            top: 30px;
-        }
-        .pic-circle{
-            position: relative;
-            left: 50%;
-            transform: translate(-50%, 20%);
-        }
-        .modal-block{
-            display: flex;
-            align-items: center;
-            margin: 40px 30px 45px;
+.buy-ticket{
+    margin-bottom: 31px;
+}
+  .text__price{
+    margin-bottom: 20px;
+  }
 
-            .pic-poster{
-                width: 360px;
-                height: 641px;
-                bottom: 147px;
-            }
-            .modal-texts{
-                display: flex;
-                flex-direction: column;
-                margin-left: 60px;
-                height: 641px;
 
-                .about{
-                    width: 450px;
-                    margin-bottom: 20px;
-                    
-                    p{
-                        margin: 0;
-                    }
-                    .title{
-                        color: #DC56C5;
-                        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                        font-size: 24px;
-                        font-weight: 600;
-                        margin-bottom: 7px;
-                    }
-                    .text{
-                        color: #0E0E0E;
-                        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                        font-size: 16px;
-                        font-weight: 400;
-                        margin: 0px;
-                    }
-                    .buy-tick-but{
-                        height: 40px;
-                        width: 145px;
-                        margin: 20px 0 31px;
-                        border-radius: 5px;
-                        background: #4C00FE;
-                        border: none;
-                        color: #FFFFFF;
-                    }
-                    .buy-tick-but:hover{
-                        background: white;
-                        color: #4C00FE;
-                        transition: 0.5s;
-                    }
-                    .buy-tick-line{
-                        display: flex;
 
-                        .ticket{
-                            margin-right: 13px;
-                        }
-                    }
-                }
-            }
-        }
-        .more-but{
-            position: relative;
-            left: 50%;
-            transform: translate(-50%, 20%);
-            color: #4C00FE;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 5px;
-            border: 1px solid #4C00FE;
-            width: 245px;
-            height: 40px;
-        }
-        .more-but:hover{
-            background: #4C00FE;
-            color: white;
-            transition: 0.5s;
-        }
-    }
+
+
+  .more-but{
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    display: block;
+    margin: 0  auto;
+    width: 255px;
+    font-family: Montserrat;
+font-size: 16px;
+font-weight: 500;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+color: #4C00FE;
+border: 1px solid #4C00FE;
+border-radius: 5px;
+padding: 10px 16px;
+margin-bottom: 62px;
+  }
+
+  .more-but:hover {
+    border: 1px solid #4C00FE;
+
+    background-color: #4C00FE;
+    color:#ffffff; 
+}
 }

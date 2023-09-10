@@ -33,10 +33,10 @@ async function fetchEvents(country, name) {
   }
 }
 
-// TypeError: Cannot read properties of undefined (reading 'events')
+
 
 clearCards();
 
 export default fetchEvents;
 
-// Unhandled Promise Rejection: TypeError: undefined is not an object (evaluating 'data._embedded.events')
+

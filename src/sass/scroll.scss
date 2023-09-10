@@ -10,7 +10,6 @@
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  transform: rotate(225deg);
 }
 
 .scroll-arrow.active {
@@ -22,9 +21,11 @@
   height: 12px;
   border: 1px solid  #ff5ce9;
   border-width: 0 3px 3px 0;
-  transform: rotate(135deg);
+  transform: rotate(-135deg);
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-60%, -60%);
+  transform-origin: center; 
+  margin-top: -4px; 
+  margin-left: -6px; 
 }

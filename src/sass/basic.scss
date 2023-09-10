@@ -1,3 +1,5 @@
+@import 'animate.css';
+
 * {
     margin: 0;
     padding: 0;
@@ -28,3 +30,24 @@ a{
     text-decoration: none;
 }
 
+
+.err{
+    display: block;
+    margin: 0 auto;
+}
+.err__svg{
+    display: block;
+   margin: 0 auto;
+}
+.notFound__404{
+    font-size: 80px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 900;
+}
+.notFound{
+    font-size:120px;
+    color: #ffffff;
+    font-weight: 900;
+
+}

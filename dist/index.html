@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page title</title>
+    <title>Event Booster</title>
     <link rel="stylesheet" href="/index.b07a87f3.css">
     <script src="/index.975ef6c8.js" defer=""></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
   </head>
   <body> 
-    
+
 
     <header class="header">
   <div class="header-content">
@@ -44,7 +46,7 @@
           </button>
         </form>
         <form class="search__form">
-          <input readonly="" type="text" class="location_input" placeholder="Choose country">
+          <input type="text" class="location_input" placeholder="Choose country">
           <button type="button" class="search-button">
             <img src="/Polygon.c501f29e.svg" alt="">
           </button>
@@ -80,11 +82,18 @@
 
     <section class="modal-overlay"></section>
 <section class="modal">
-    <img src="/pic%20circle.e016d29c.png" alt="pic circle" class="pic-circle">
-    <img src="/close.d7789fe2.png" alt="close button" class="close">
-    <img src="/pic-poster.e6b906e1.png" alt="pic poster" class="pic-poster">  
-    <img src="/ticket.e2f575a5.png" alt="ticket" class="ticket">
+  <div class="close">
+    <button class="closeBtn">
+      <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024">
+        <path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path>
+      </svg>
+      <span class="modal__back">Back</span>
+    </button>
+  </div>
 </section>
+
+
+
     <div class="scroll-arrow" id="scrollArrow">
      <div class="arrow"></div>
  </div>
@@ -100,5 +109,6 @@
     <script src="/index.e930003d.js" defer=""></script>
     <script src="/index.f9b3b06b.js" defer=""></script>
     <script src="/index.d9e2f074.js" defer=""></script>
+
   </body>
 </html>
