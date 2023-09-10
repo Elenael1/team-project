@@ -1,5 +1,3 @@
-
-
 const ul = document.querySelector('.cards');
 const pag = document.querySelector('.pag_buttons');
 
@@ -46,14 +44,12 @@ function notFound() {
   document.addEventListener('click', handleDocumentClick);
 
  function handleDocumentClick(event) {
-  // Проверяем, был ли клик на элементе с классом "no-info"
   if (event.target.classList.contains('no-info')) {
-    // Если да, предотвращаем дальнейшие действия
     event.preventDefault();
     event.stopPropagation();
   }
 
-  // Добавляем обработчик клика на документ
+
 
 }}
  

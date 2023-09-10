@@ -57,11 +57,12 @@ body {
     justify-content: center;
     background-color: none;
     border-radius: 3px;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
+    font-weight: 600;
     transition: all 0.2s linear;
     cursor: pointer;
-    border: none;
     background: none;
+    border: none;
   }
 
   .closeBtn > svg {
@@ -146,8 +147,8 @@ body {
   }
   .buy-tick-but:hover {
     border: 1px solid #000;
-    background-color:#fff; // Изменяем фон при наведении
-    color: #0e0e0e; // Изменяем цвет текста при наведении
+    background-color:#fff; 
+    color: #0e0e0e; 
 }
 .buy-ticket{
     margin-bottom: 31px;
