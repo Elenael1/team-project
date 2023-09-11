@@ -6,16 +6,37 @@ document.addEventListener('DOMContentLoaded', () => {
   addEventListener("keydown", closeModalOnKey);
 
   function openModal(e) {
-    modal.style.left = '50%';
-    modal.style.transform = 'translate(-50%, 20%)';
+    const card = e.target.closest('.card-item');
+    if (!card) return;
+  
+    const cardRect = card.getBoundingClientRect();
+    const modalHeight = modal.clientHeight;
+    const modalWidth = modal.clientWidth;
+  
+    const top = window.innerHeight / 2 - modalHeight / 2 + window.scrollY;
+    const left = window.innerWidth / 2 - modalWidth / 2;
+  
+    modal.style.top = `${Math.max(top, 0)}px`;
+    modal.style.left = `${Math.max(left, 0)}px`;
+  
+    modal.style.transform = 'none';
     modal.style.transition = '0.5s';
+  
+    const overlay = document.querySelector('.modal-overlay');
+    overlay.style.display = 'block';
+    overlay.style.backdropFilter = 'blur(10px)';
   }
-
+  
   function closeModalBtn(e) {
     modal.style.left = '-150%';
     modal.style.transform = 'translate(-50%, 20%)';
     modal.style.transition = '0.5s';
+  
+    const overlay = document.querySelector('.modal-overlay');
+    overlay.style.display = 'none';
+    overlay.style.backdropFilter = 'none';
   }
+  
 
   function closeModalOnKey({ key, code }) {
     if (code === "Escape") {
