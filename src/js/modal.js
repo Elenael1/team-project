@@ -85,18 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <img src="${images[0].url}" alt="pic circle" class="pic-circle" />
     <div class="close">
       <button class="closeBtn">
-        <svg
-          height="20"
-          width="20"
-          xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          viewBox="0 0 1024 1024"
-        >
-          <path
-            d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.524770z"
-          ></path>
-        </svg>
-        <span class="modal__back">Back</span>
+      <svg fill='#4C00FE' xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
       </button>
     </div>
   </div>
@@ -109,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="modal-texts">
     <div class="about">
       <p class="title__modal">INFO</p>
-      <p class="text__modal">${info.length > 250 ? info.slice(0, 250) + '...' : info}</p>
+      <p class="text__modal">${info.length > 225 ? info.slice(0, 225) + '...' : info}</p>
     </div>
 
     <div class="about">
@@ -133,14 +122,27 @@ document.addEventListener('DOMContentLoaded', () => {
       <p class="title__modal">PRICES</p>
       <div class="buy-ticket">
         <div class="buy-tick-line">
-          <p class="text__price">Standart ${minPrice}-${currencyP}</p>
-          <a class="buy-tick-but" href="${_embedded.venues[0].url}">BUY TICKET</a>
+       
+<div class='barCodeDiv'>
+        <svg class='barCode' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M24 32C10.7 32 0 42.7 0 56V456c0 13.3 10.7 24 24 24H40c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24H24zm88 0c-8.8 0-16 7.2-16 16V464c0 8.8 7.2 16 16 16s16-7.2 16-16V48c0-8.8-7.2-16-16-16zm72 0c-13.3 0-24 10.7-24 24V456c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24H184zm96 0c-13.3 0-24 10.7-24 24V456c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24H280zM448 56V456c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24H472c-13.3 0-24 10.7-24 24zm-64-8V464c0 8.8 7.2 16 16 16s16-7.2 16-16V48c0-8.8-7.2-16-16-16s-16 7.2-16 16z"/></svg>
+        <p class="text__price">Standart ${minPrice}-${currencyP}</p>
+</div>
+
+
+
+         <a class="buy-tick-but" href="${_embedded.venues[0].url}">BUY TICKET</a>
         </div>
       </div>
 
       <div class="buy-ticket">
         <div class="buy-tick-line">
-          <p class="text__price">VIP ${maxPrice}-${currencyP}</p>
+
+
+        <div class='barCodeDiv'>
+        <svg class='barCode' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M24 32C10.7 32 0 42.7 0 56V456c0 13.3 10.7 24 24 24H40c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24H24zm88 0c-8.8 0-16 7.2-16 16V464c0 8.8 7.2 16 16 16s16-7.2 16-16V48c0-8.8-7.2-16-16-16zm72 0c-13.3 0-24 10.7-24 24V456c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24H184zm96 0c-13.3 0-24 10.7-24 24V456c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24H280zM448 56V456c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24H472c-13.3 0-24 10.7-24 24zm-64-8V464c0 8.8 7.2 16 16 16s16-7.2 16-16V48c0-8.8-7.2-16-16-16s-16 7.2-16 16z"/></svg>
+        <p class="text__price">VIP ${maxPrice}-${currencyP}</p>
+        </div>
+          
           <a class="buy-tick-but" href="${_embedded.venues[0].url}">BUY TICKET</a>
         </div>
       </div>
@@ -152,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <a class="more-but" href="${_embedded.attractions[0].url}">MORE FROM THIS AUTHOR</a>
 </div>
 `
-const truncatedInfo = info.length > 50 ? info.slice(0, 50) + '...' : info;
+
       ;
    
     modal.innerHTML = markup;

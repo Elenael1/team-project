@@ -1,0 +1,38 @@
+
+
+
+.feedback-container {
+  display: flex;
+  justify-content: center;
+margin-bottom: 50px;
+}
+
+.feedback__content{
+  margin-right: 50px;
+background: none;
+  font-size: 0.875rem;
+  border: 2px solid  #cdafcf ;
+  border-radius: 15px;
+  padding:10px 15px 10px 20px;
+
+}
+
+.feedback-button-reaction {
+  background: none;
+cursor: pointer;
+border: none;
+}
+
+
+.feedback-button-reaction svg {
+width: 50px;
+height: 50px;
+fill: #cdafcf;
+
+
+margin-right: 10px;
+  
+}
+
+
+

@@ -91,33 +91,67 @@
     justify-content: center;
     align-items: center;
 
+
+
     .click {
-      margin-top: 20px;
-      margin-bottom: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border: none;
       background: none;
-      margin-right: 30px;
-      font-size: 19px;
+      margin-right: 10px;
+      font-size: 17px;
       color: #fff;
       cursor: pointer;
       position: relative;
+      width: 30px;
+      
+
     }
-    .click::after {
-      width: 45px;
-      height: 30px;
-      top: -4px;
-      right: -18px;
-    }
+   
 
     .click.active::after {
+      width: 30px;
+      height: 30px;
+
+      content: '';
+      position: absolute;
+      z-index: 10;
+      border: 1px solid #ff5ce9;
+      box-sizing: border-box;
+      border-radius: 5px 5px;
+      pointer-events: none;
+     
+    }
+
+    .click.active::after:hover {
+      width: 30px;
+      height: 30px;
+      content: '';
+      position: absolute;
+      z-index: 10;
+      box-sizing: border-box;
+      border-radius: 5px 5px;
+      pointer-events: none;
+      box-shadow: 0 0 16px #ff5ce9, 0 0 10px #ff5ce9, 0 0 15px #ff5ce9, 0 0 5px #ff5ce9;
+    }
+    
+
+    .click:hover::after{
+      width: 30px;
+      height: 30px;
+
       content: '';
       position: absolute;
       z-index: 10;
       border: 1px solid #dc56c54d;
       box-sizing: border-box;
-      border-radius: 50px 0;
+      border-radius: 5px 5px;
       pointer-events: none;
-    }
+
+      box-shadow: 
+      0 0 16px #ff5ce9, 0 0 12px #ff5ce9, 0 0 15px#ff5ce9, 0 0 5px #ff5ce9;
+    } 
   }
 
   .click-points {
