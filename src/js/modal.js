@@ -43,6 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
       modal.style.left = '-150%';
       modal.style.transform = 'translate(-50%, 20%)';
       modal.style.transition = '0.5s';
+
+      const overlay = document.querySelector('.modal-overlay');
+    overlay.style.display = 'none';
+    overlay.style.backdropFilter = 'none';
     }
   }
 
